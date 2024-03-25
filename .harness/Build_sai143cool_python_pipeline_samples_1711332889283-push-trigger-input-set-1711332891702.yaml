@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_sai143cool_python_pipeline_samples_1711332889283-push-trigger-input-set
+  identifier: Build_sai143cool_python_pipeline_samples_1711332889283pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: FirstProject
+  pipeline:
+    identifier: Build_sai143cool_python_pipeline_samples_1711332889283
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
