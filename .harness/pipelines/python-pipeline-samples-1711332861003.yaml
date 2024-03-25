@@ -25,6 +25,9 @@ pipeline:
           runtime:
             type: Docker
             spec: {}
+        delegateSelectors:
+          - docker-delegate
+          - linux-amd64
   properties:
     ci:
       codebase:
