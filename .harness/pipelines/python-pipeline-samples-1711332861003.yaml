@@ -1,0 +1,33 @@
+pipeline:
+  name: Build python-pipeline-samples
+  identifier: Build_sai143cool_python_pipeline_samples_1711332889283
+  projectIdentifier: FirstProject
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo Welcome Message
+                  identifier: Echo_Welcome_Message
+                  spec:
+                    shell: Sh
+                    command: echo "Welcome to Harness CI"
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1711204235360
+        repoName: sai143cool/python-pipeline-samples
+        build: <+input>
