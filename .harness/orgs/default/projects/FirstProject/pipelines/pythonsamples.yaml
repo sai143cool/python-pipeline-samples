@@ -33,7 +33,7 @@ pipeline:
                   name: pythonsamples
                   identifier: pythonsamples
                   spec:
-                    connectorRef: DockerHub_connector
+                    connectorRef: dockerhub
                     repo: sai143cool/mavenwebapp
                     tags:
                       - "1.0"
