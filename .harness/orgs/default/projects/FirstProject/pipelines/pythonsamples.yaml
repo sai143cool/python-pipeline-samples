@@ -1,0 +1,39 @@
+pipeline:
+  name: pythonsamples
+  identifier: pythonsamples
+  projectIdentifier: FirstProject
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: pythonsamples
+        build: <+input>
+  stages:
+    - stage:
+        name: pythonsampleweb
+        identifier: pythonsampleweb
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: pythonsamples
+                  identifier: pythonsamples
+                  spec:
+                    connectorRef: DockerHub_connector
+                    repo: sai143cool/mavenwebapp
+                    tags:
+                      - "1.0"
